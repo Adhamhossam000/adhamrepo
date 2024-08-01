@@ -42,9 +42,12 @@ export default function RootLayout({
         >
           <div className="relative flex-1 flex items-center justify-center">
             <BackgroundComponent />
-            <div className="relative z-20 w-full">
+            <div  className="relative z-20 w-full">
               <Nav />
+              <div className="fade-in">
+
               {children}
+              </div>
             </div>
           </div>
         </ThemeProvider>
