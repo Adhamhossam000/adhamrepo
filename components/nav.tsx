@@ -30,7 +30,7 @@ export function Nav() {
       <div className="flex flex-1 items-center">
         <Link href="/">
           <h1 className={cn("font-light text-xl", spaceMono.className)}>
-          <span className="text-white-700 ml-2 text-base">
+          <span className="text-white-700 ml-2 text-sm">
               Adham Image Generator ⚡️
             </span>
           </h1>
@@ -40,7 +40,7 @@ export function Nav() {
       <Drawer>
           <DrawerTrigger>
             <Button variant="ghost">
-              <CircleUserRound/>
+              <CircleUserRound className="text-sm"/>
             </Button>
           </DrawerTrigger>
           <DrawerContent>
