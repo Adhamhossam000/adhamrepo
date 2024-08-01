@@ -9,7 +9,7 @@ import Link from "next/link";
 import ShinyButton from "@/components/magicui/shiny-button";
 
 const DEFAULT_PROMPT =
-  "A Soldier In Exoskeleton Armor patrolling a dystopian landscape.";
+  "A Soldier In Exoskeleton Armor Patrolling a Dystopian Landscape.";
 
 function randomSeed() {
   return Math.floor(Math.random() * 10000000).toFixed(0);
