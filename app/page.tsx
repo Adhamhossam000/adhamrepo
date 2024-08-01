@@ -9,7 +9,7 @@ import Link from "next/link";
 import ShinyButton from "@/components/magicui/shiny-button";
 
 const DEFAULT_PROMPT =
-  "A cinematic shot of a baby raccoon wearing an intricate italian priest robe";
+  "A Soldier In Exoskeleton Armor patrolling a dystopian landscape.";
 
 function randomSeed() {
   return Math.floor(Math.random() * 10000000).toFixed(0);
