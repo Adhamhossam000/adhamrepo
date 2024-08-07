@@ -7,13 +7,9 @@ import { Input } from "@/components/ui/input";
 import { ModelIcon } from "@/components/icons/model-icon";
 import Link from "next/link";
 import ShinyButton from "@/components/magicui/shiny-button";
+import { getRandomIdeas } from "@/prompts"; // Update the import path
 
-const DEFAULT_PROMPT =
-  "A Hacker in a dark room, surrounded by screens showing code and data.";
-
-function randomSeed() {
-  return Math.floor(Math.random() * 10000000).toFixed(0);
-}
+const randomSeed = () => Math.floor(Math.random() * 10000000).toFixed(0);
 
 fal.config({
   proxyUrl: "/api/proxy",
@@ -30,7 +26,7 @@ const INPUT_DEFAULTS = {
 
 export default function Lightning() {
   const [image, setImage] = useState<null | string>(null);
-  const [prompt, setPrompt] = useState<string>(DEFAULT_PROMPT);
+  const [prompt, setPrompt] = useState<string>("");
   const [seed, setSeed] = useState<string>(randomSeed());
   const [inferenceTime, setInferenceTime] = useState<number>(NaN);
 
@@ -66,11 +62,14 @@ export default function Lightning() {
     if (typeof window !== "undefined") {
       window.document.cookie = "fal-app=true; path=/; samesite=strict; secure;";
     }
+    // Set a random prompt from the available options
+    const [randomPrompt] = getRandomIdeas();
+    setPrompt(randomPrompt || "Default prompt if none selected");
     // initial image
     connection.send({
       ...INPUT_DEFAULTS,
       num_inference_steps: "4",
-      prompt: prompt,
+      prompt: randomPrompt || "Default prompt if none selected",
       seed: seed ? Number(seed) : Number(randomSeed()),
     });
   }, []);
@@ -137,11 +136,11 @@ export default function Lightning() {
                   </span>
                 </div>
               )}
-              <div className="md:min-h-[512px] max-w-fit">
+              <div className="md:min-h-[512px] max-w-fit fade-in">
                 {image && (
                   <>
                     <img id="imageDisplay" src={image} alt="Dynamic Image" />
-                    <ShinyButton text="Download" className="mt-4" onClick={handleDownload} />
+                    <ShinyButton text="Download" className="mt-4 " onClick={handleDownload} />
                   </>
                 )}
               </div>
