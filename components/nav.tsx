@@ -26,7 +26,7 @@ const spaceMono = Space_Mono({
 
 export function Nav() {
   return (
-    <div className="h-14 py-2 px-2 md:px-8 border-b flex items-center fade-in">
+    <div className="h-14 py-2 px-2 md:px-8 flex items-center fade-in">
       <div className="flex flex-1 items-center">
         <Link href="/">
           <h1 className={cn("font-light text-xl", spaceMono.className)}>
