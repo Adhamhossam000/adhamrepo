@@ -9,6 +9,15 @@
 *{
   color: white;
 }
+#navbar-border {
+  border-bottom-width: 1px;
+  border-bottom-style: groove;
+
+
+}
+input{
+  background-color: black;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
