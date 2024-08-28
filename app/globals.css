@@ -6,7 +6,9 @@
   width: 0;
   background-color: transparent;
 }
-
+*{
+  color: white;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
