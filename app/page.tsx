@@ -99,7 +99,7 @@ export default function Lightning() {
                   onChange={(e) => {
                     handleOnChange(e.target.value);
                   }}
-                  className="font-light w-full"
+                  className="font-light w-full bg-black text-white"
                   placeholder="Type something..."
                   value={prompt}
                 />
@@ -111,7 +111,7 @@ export default function Lightning() {
                     setSeed(e.target.value);
                     handleOnChange(prompt);
                   }}
-                  className="font-light w-28"
+                  className="font-light w-28 bg-black text-white"
                   placeholder="random"
                   type="number"
                   value={seed}
