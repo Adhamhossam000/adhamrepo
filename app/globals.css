@@ -74,7 +74,7 @@ input{
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(0);
   }
   100% {
     opacity: 1;
@@ -83,5 +83,7 @@ input{
 }
 
 .fade-in {
-  animation: fadeIn 1.5s ease-out;
+  animation: fadeIn 2s ease-out;
+  animation-fill-mode: forwards; /* ensures the animation stays at 100% */
+  will-change: opacity, transform; /* for performance optimization */
 }
